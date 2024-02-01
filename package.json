@@ -1,0 +1,25 @@
+{
+  "name": "denskorik-chat-11",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "npx parcel index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
+    "@types/luxon": "^3.4.2",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "eslint": "^8.56.0",
+    "eslint-config-xo": "^0.43.1",
+    "eslint-config-xo-typescript": "^1.0.1",
+    "parcel": "^2.11.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "js-cookie": "^3.0.5",
+    "luxon": "^3.4.4"
+  }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Чат</title>
+  <link rel="stylesheet" href="./src/css/style.css">
+  <script type="module" src="./src/ts/index.ts"></script>
+</head>
+
+<body>
+  <main>
+    <div class="chat">
+      <section class="chat-header">
+        <button id="settings-popup-open-button" class="chat-header__button button-theme" type="button">
+          Настройки
+        </button>
+        <button id="sign-out" class="chat-header__button button-theme">Выйти</button>
+      </section>
+      <section class="chat-body">
+        <div class="whole-story-uploaded none">
+          <p class="whole-story-uploaded__text">Вся история загружена</p>
+        </div>
+        <template id="message">
+          <li class="chat-body-content__item delivered">
+            <!-- <img class="user-picture" src="./src/img/standart-profile-picture.jpg" alt="profile picture"> -->
+            <div class="user-message">
+              <p class="user-name"></p>
+              <p class="chat-body-content__text"></p>
+            </div>
+            <time class="chat-body-content__time"></time>
+          </li>
+        </template>
+        <button class="arrow-back none">
+          <p class="arrow-back-unread-messages"></p>
+          <img src="./src/img/arrow-back.svg" alt="arrow to first message">
+        </button>
+        <ul class="chat-body-content__list"></ul>
+      </section>
+      <section class="chat-footer">
+        <form class="chat-footer-form">
+          <input class="chat-footer-form__input" type="text" placeholder="сообщение..">
+          <button class="chat-footer-form__button button-theme" type="submit">-></button>
+        </form>
+      </section>
+    </div>
+
+    <dialog id="settings-popup" class="overlay-popup">
+      <section class="popup-header">
+        <h2 class="popup-header__title">Настройки</h2>
+        <button id="settings-popup-close-button" class="popup-header__button close">
+          <img src="./src/img/close-btn.svg" alt="close button">
+        </button>
+      </section>
+      <section class="popup-body">
+        <ul class="setitngs__list">
+          <li class="settings__item">
+            <label class="settings__item-name" for="user-name">Имя в чате</label>
+            <form class="settings__item-form">
+              <input class="settings__item-form-input" name="user-name" type="text" placeholder="Стив">
+              <button class="settings__item-form-button button-theme" type="submit">
+                ->
+              </button>
+            </form>
+          </li>
+        </ul>
+      </section>
+    </dialog>
+    <dialog id="authorization-popup">
+      <section class="popup-header">
+        <h2 class="popup-header__title">Авторизация</h2>
+      </section>
+      <section class="popup-body">
+        <label class="authorization-popup__label popup-body__label" for="email">Почта:</label>
+        <form class="authorization-popup__form">
+          <input class="authorization-popup__input" type="email" name="email" placeholder="E-mail">
+          <div class="authorization-popup-buttons">
+            <button id="authorization-popup-button-getcode" class="authorization-popup__button button-theme">
+              Получить код
+            </button>
+            <button id="authorization-popup-button-entercode" class="authorization-popup__button button-theme">
+              Ввести код
+            </button>
+          </div>
+          <p id="validation-input-result" class="validation-input-result-theme"></p>
+        </form>
+      </section>
+    </dialog>
+    <dialog id="authorization-confirm-popup">
+      <section class="popup-header">
+        <h2 class="popup-header__title">Подтверждение</h2>
+      </section>
+      <section class="popup-body">
+        <label class="authorization-confirm-popup__label popup-body__label" for="code">Код:</label>
+        <form class="authorization-confirm-popup__form">
+          <input class="authorization-confirm-popup__input" type="text" name="code" placeholder="code">
+          <button class="authorization-confirm-popup__button button-theme">
+            Войти
+          </button>
+          <button id="authorization-confirm-popup-close-button" class="button-theme">
+            Назад
+          </button>
+        </form>
+        <p id="validation-token-result" class="validation-token-result-theme"></p>
+      </section>
+    </dialog>
+  </main>
+</body>
+
+</html>
